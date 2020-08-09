@@ -10,7 +10,8 @@ import java.io.File;
 
 public class RecordVideoThread extends Thread{
     private static Logger logger = LoggerFactory.getLogger(RecordVideoThread.class);
-    public String streamURL="rtmp://192.168.66.162/rtp/0C8436CA";//流地址 网上有自行百度
+    public String streamURL= "rtmp://192.168.66.162/rtp/0C844759";//流地址 网上有自行百度
+    public String mediaFileName = "E:/we-are-so-happy1000BBB.mp4";
     public String filePath;//文件路径
     public Integer id;//案件id
     public Integer audioChannel;//是否录制声音
@@ -26,10 +27,10 @@ public class RecordVideoThread extends Thread{
             Frame frame = grabber.grabFrame();
             if (frame != null) {
                 //保存到本地的文件
-                File outFile = new File("E:/test.mp4");
+                File outFile = new File(this.mediaFileName);
                 if (!outFile.isFile()) outFile.createNewFile();
 // 流媒体输出地址，分辨率（长，高），是否录制音频（0:不录制/1:录制）
-                recorder = new FFmpegFrameRecorder("E:/test.mp4", frame.imageWidth, frame.imageHeight, 1);
+                recorder = new FFmpegFrameRecorder(this.mediaFileName, frame.imageWidth, frame.imageHeight, 1);
                 recorder.setVideoCodec(avcodec.AV_CODEC_ID_H264);//直播流格式
                 recorder.setFormat("mp4");//录制的视频格式
                 recorder.setFrameRate(25);//帧数
