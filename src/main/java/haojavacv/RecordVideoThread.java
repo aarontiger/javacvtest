@@ -10,8 +10,8 @@ import java.io.File;
 
 public class RecordVideoThread extends Thread{
     private static Logger logger = LoggerFactory.getLogger(RecordVideoThread.class);
-    public String streamURL= "rtmp://192.168.66.162/rtp/0C844759";//流地址 网上有自行百度
-    public String mediaFileName = "E:/we-are-so-happy1000BBB.mp4";
+    public String streamURL= "rtmp://127.0.0.1:1935/live/haotestA1";//流地址 网上有自行百度
+    public String mediaFileName = "E:\\meeting_record_0819.mp4";
     public String filePath;//文件路径
     public Integer id;//案件id
     public Integer audioChannel;//是否录制声音
