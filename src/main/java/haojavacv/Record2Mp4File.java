@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
-public class RecordVideoThread extends Thread{
-    private static Logger logger = LoggerFactory.getLogger(RecordVideoThread.class);
+public class Record2Mp4File extends Thread{
+    private static Logger logger = LoggerFactory.getLogger(Record2Mp4File.class);
     public String streamURL= "rtmp://127.0.0.1:1935/live/haotestA1";//流地址 网上有自行百度
     public String mediaFileName = "E:\\meeting_record_0819.mp4";
     public String filePath;//文件路径
@@ -76,7 +76,7 @@ public class RecordVideoThread extends Thread{
         }
     }
     public static void main(String args[]){
-        RecordVideoThread thread = new RecordVideoThread();
+        Record2Mp4File thread = new Record2Mp4File();
         thread.start();
     }
 }

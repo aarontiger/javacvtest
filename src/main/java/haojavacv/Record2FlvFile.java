@@ -8,8 +8,8 @@ import org.bytedeco.javacv.Frame;
  * rtmp 拉流保存到flv文件
  */
 public class Record2FlvFile {
-    public String streamURL= "rtmp://192.168.66.162:1935/live/haotestA1";//流地址 网上有自行百度
-    public String mediaFileName = "E:\\meeting_record_0819BBB.flv";
+    public String streamURL= "rtmp://192.168.66.162:1935/live/haotestA1";
+    public String mediaFileName = "E:\\meeting_record_0819HHH.flv";
     //m 秒数
     public static void  frameRecord(String inputFile, String outputFile,Long m) throws Exception{
         boolean isStart = true;
@@ -55,9 +55,9 @@ public class Record2FlvFile {
         }
     }
     public static void main(String args[]){
-        Record2FlvFile thread = new Record2FlvFile();
+        Record2FlvFile recorder = new Record2FlvFile();
         try {
-            thread.frameRecord(thread.streamURL,thread.mediaFileName,120L);
+            recorder.frameRecord(recorder.streamURL,recorder.mediaFileName,120L);
         } catch (Exception e) {
             e.printStackTrace();
         }
